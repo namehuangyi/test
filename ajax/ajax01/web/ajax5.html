@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用XML完成数据交换</title>
+</head>
+<body>
+
+<script type="text/javascript">
+  window.onload = function (){
+    document.getElementById("btn").onclick = function (){
+      var xhr = new XMLHttpRequest();
+      var xml = ""
+      xhr.onreadystatechange = function (){
+        if (this.readyState == 4){
+          if (this.status == 200){
+            // 服务器端响应了一个XML字符串，这里怎么接收呢？
+            // 使用XMLHttpRequest的responseXML属性，接收返回之后，可以自动封装成document对象(文档对象)
+            var responseXML = this.responseXML;
+            var stus = responseXML.getElementsByTagName("student")
+            for (var i = 0; i < stus.length; i++) {
+              var stu = stus[i];
+              xml += "<tr>"
+              xml += "<th>"+(i+1)+"</th>"
+              var childNodes = stu.childNodes;
+              for (var j = 0; j < childNodes.length; j++) {
+                var childNode = childNodes[j];
+                if (childNode.nodeName == "name"){
+                  xml += "<th>"+childNode.textContent+"</th>"
+                }else if (childNode.nodeName == "age"){
+                  xml += "<th>"+childNode.textContent+"</th>"
+                }
+              }
+            }
+            document.getElementById("tb").innerHTML = xml
+          }else{
+            alert(this.status)
+          }
+        }
+      }
+      xhr.open("GET", "/ajax/ajaxrequest5?t=" + new Date().getTime(), true)
+      xhr.send()
+    }
+  }
+</script>
+<button id="btn">显示学生信息</button>
+<table width="50%" border="1px">
+  <tr>
+    <th>序号</th>
+    <th>姓名</th>
+    <th>年龄</th>
+  </tr>
+  <tbody id="tb">
+  <!--<tr>
+    <th>1</th>
+    <th>张三</th>
+    <th>20</th>
+  </tr>
+  <tr>
+    <th>2</th>
+    <th>李四</th>
+    <th>22</th>
+  </tr>-->
+  </tbody>
+</table>
+</body>
+</html>

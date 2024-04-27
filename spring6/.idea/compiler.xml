@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="spring-004-jdbc" />
+        <module name="spring-006-tx-bank" />
+        <module name="dynamic-proxy-jdk" />
+        <module name="spring-005-spring-aspectj-aop-anno" />
+        <module name="spring-007-sm" />
+        <module name="spring6-001" />
+        <module name="spring-002-injection" />
+        <module name="static-proxy" />
+        <module name="dynamic-proxy-cglib" />
+        <module name="spring-003-annotation" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

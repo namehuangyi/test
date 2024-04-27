@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>将AJAX代码进行封装，封装到jQuery库当中</title>
+</head>
+<body>
+<script type="text/javascript" src="js/jQuery-js.js"></script>
+<script type="text/javascript">
+  window.onload = function (){
+    document.getElementById("btn").onclick = function (){
+      var username = document.getElementById("username").value
+      $.ajax({
+        type : "POST",
+        url : "/ajax/ajaxrequest6",
+        data : "username=" + username,
+        async : true,
+        success : function (json){
+          document.getElementById("mydiv").innerHTML = json.uname
+        }
+      })
+    }
+  }
+</script>
+<button id="btn">发送AJAX请求</button><br>
+用户名：<input type="text" id="username"><br>
+<div id="mydiv"></div>
+</body>
+</html>

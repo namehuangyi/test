@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/spring-002-injection.iml" filepath="$PROJECT_DIR$/spring-002-injection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-003-annotation.iml" filepath="$PROJECT_DIR$/spring-003-annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-004-jdbc.iml" filepath="$PROJECT_DIR$/spring-004-jdbc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-005-spring-aspectj-aop-anno.iml" filepath="$PROJECT_DIR$/spring-005-spring-aspectj-aop-anno.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-006-tx-bank.iml" filepath="$PROJECT_DIR$/spring-006-tx-bank.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-007-sm.iml" filepath="$PROJECT_DIR$/spring-007-sm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring6.iml" filepath="$PROJECT_DIR$/spring6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring6-001.iml" filepath="$PROJECT_DIR$/spring6-001.iml" />
+    </modules>
+  </component>
+</project>

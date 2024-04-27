@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="OrderDaoBean" class="com.powernode.spring6.Dao.OrderDao"></bean>
+<bean id="OrderServiceBean" class="com.powernode.spring6.service.OrderService">
+    <property name="orderDao" ref="OrderDaoBean"></property>
+</bean>
+
+<bean id="OrderServiceBean2" class="com.powernode.spring6.service.OrderService">
+    <property name="orderDao">
+        <bean class="com.powernode.spring6.Dao.OrderDao"></bean>
+    </property>
+</bean>
+    
+<bean id="UserBean" class="com.powernode.spring6.bean.User">
+    <property name="username" value="zhangsan"/>
+    <property name="password" value="123"/>
+    <property name="age" value="20"/>
+</bean>    
+</beans>

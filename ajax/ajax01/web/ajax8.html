@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>省市联动</title>
+</head>
+<body>
+<script type="text/javascript" src="js/jQuery-js.js"></script>
+
+<script type="text/javascript">
+$(function (){
+    // 页面加载发送ajax请求
+    $.ajax({
+        type : "Get",
+        url : "/ajax/listArea",
+        data : "t=" + new Date().getTime(),
+        async : true,
+        success : function (jsonArr){
+            var html = "<option value=\"\">--请选择省份--</option>"
+            for (var i = 0; i < jsonArr.length; i++) {
+                var json = jsonArr[i];
+                html += "<option value=\""+json.code+"\">"+json.name+"</option>"
+            }
+            $("#province").html(html)
+        }
+    })
+
+    // 只有change发生，就发送ajax请求
+    $("#province").change(function (){
+        $.ajax({
+            type: "GET",
+            url : "/ajax/listArea",
+            data : "t=" + new Date().getTime() + "&pcode=" + $("#province").val(),
+            async: true,
+            success : function (jsonArr){
+                var html = "<option value=\"\">--请选择市--</option>"
+                for (var i = 0; i < jsonArr.length; i++) {
+                    var json = jsonArr[i];
+                    html += "<option value=\""+json.code+"\">"+json.name+"</option>"
+                }
+                $("#city").html(html)
+            }
+        })
+    })
+
+})
+</script>
+
+<select id="province">
+  <!--<option value="">&#45;&#45;请选择省份&#45;&#45;</option>
+  <option value="001">河北省</option>
+  <option value="002">河南省</option>-->
+</select>
+
+<select id="city">
+    <!--<option value="003">石家庄</option>
+    <option value="004">邯郸</option>-->
+</select>
+</body>
+</html>

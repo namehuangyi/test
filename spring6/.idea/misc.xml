@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/spring6-001/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-002-injection/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-003-annotation/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-004-jdbc/pom.xml" />
+        <option value="$PROJECT_DIR$/static-proxy/pom.xml" />
+        <option value="$PROJECT_DIR$/dynamic-proxy-jdk/pom.xml" />
+        <option value="$PROJECT_DIR$/dynamic-proxy-cglib/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-005-spring-aspectj-aop-anno/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-006-tx-bank/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-007-sm/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17_PREVIEW" project-jdk-name="18" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

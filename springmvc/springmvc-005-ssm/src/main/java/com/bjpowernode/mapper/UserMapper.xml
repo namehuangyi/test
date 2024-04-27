@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bjpowernode.mapper.UserMapper">
+    <!--实体类与表中列名的映射-->
+    <resultMap id="usermap" type="user">
+        <id property="userId" column="user_id"/>
+        <result property="userName" column="user_name"/>
+        <result property="userAge" column="user_age"/>
+        <result property="userSex" column="user_sex"/>
+    </resultMap>
+    
+    <sql id="allColumns">
+        user_id,user_name,user_age,user_sex
+    </sql>
+    
+    <select id="selectUserPage" resultMap="usermap">
+        select <include refid="allColumns"></include>
+            from t_user
+        <where>
+            <if test="userName != null and userName != ''">
+                and user_name like concat('%',#{userName},'%')
+            </if>
+            <if test="userSex != null and userSex != ''">
+                and user_sex = #{userSex}
+            </if>
+        </where>
+        limit #{startRow},2
+    </select>
+
+    <insert id="createUser" parameterType="user">
+        insert into t_user values (#{userId},#{userName},#{userAge},#{userSex})
+    </insert>
+
+    <delete id="deleteUserById" parameterType="string">
+        delete from t_user where user_id = #{userId}
+    </delete>
+
+    <select id="getRowCount" resultType="int">
+        select count(*)
+        from t_user
+        <where>
+            <if test="userName != null and userName != ''">
+                and user_name like concat('%',#{userName},'%')
+            </if>
+            <if test="userSex != null and userSex != ''">
+                and user_sex = #{userSex}
+            </if>
+        </where>
+    </select>
+</mapper>

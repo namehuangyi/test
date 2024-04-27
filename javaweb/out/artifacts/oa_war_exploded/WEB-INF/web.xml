@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <servlet>
+        <servlet-name>deptIns</servlet-name>
+        <servlet-class>com.bjpowernode.oa.servlet.DeptInsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deptIns</servlet-name>
+        <url-pattern>/dept/ins</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>delDept</servlet-name>
+        <servlet-class>com.bjpowernode.oa.servlet.DelDeptServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>delDept</servlet-name>
+        <url-pattern>/dept/del</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>deptUpdate</servlet-name>
+        <servlet-class>com.bjpowernode.oa.servlet.DeptUpdateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deptUpdate</servlet-name>
+        <url-pattern>/dept/update</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>deptEdit</servlet-name>
+        <servlet-class>com.bjpowernode.oa.servlet.DeptEditServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deptEdit</servlet-name>
+        <url-pattern>/dept/edit</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>deptList</servlet-name>
+        <servlet-class>com.bjpowernode.oa.servlet.DeptListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deptList</servlet-name>
+        <url-pattern>/dept/list</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>deptSelect</servlet-name>
+        <servlet-class>com.bjpowernode.oa.servlet.DeptSelectServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deptSelect</servlet-name>
+        <url-pattern>/dept/select</url-pattern>
+    </servlet-mapping>
+</web-app>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="spring-003-ajax (2)" />
+        <module name="springmvc-005-ssm" />
+        <module name="spring-003-ajax (1)" />
+        <module name="springmvc-001" />
+        <module name="springmvc-002-method" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

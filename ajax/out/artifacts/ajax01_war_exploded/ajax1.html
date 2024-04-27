@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发送ajax get请求</title>
+    <script type="text/javascript">
+        window.onload = function (){
+            document.getElementById("helloBtn").onclick = function (){
+                // alert("哈哈！")
+                // 第一步:创建ajax核心对象XMLHttpRequest（XMLHttpRequest是浏览器内置对象）
+                var xhr = new XMLHttpRequest();
+                // 第二步：注册回调函数
+                xhr.onreadystatechange = function (){
+                    if (this.readyState == 4){
+                        if (this.status == 200){
+                            document.getElementById("mydiv").innerHTML = this.responseText
+                            console.log("响应成功，完美！")
+                        } else if (this.readyState == 400){
+                            console.log("对不起，您访问的资源不存在，请检查请求路径！")
+                        } else if (this.readyState == 500){
+                            console.log("对不起，服务器发生错误！")
+                        }
+                    }
+                }
+
+                // 第三步：开启通道（浏览器和服务器建立连接，通道打开，并不会发送请求）
+                xhr.open("GET", "/ajax/ajaxrequest1", true)
+                // 第四步：，发送请求
+                xhr.send()
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="hello" id="helloBtn">
+
+<div id="mydiv"></div>
+</body>
+</html>

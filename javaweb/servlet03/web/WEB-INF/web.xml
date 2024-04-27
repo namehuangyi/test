@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <!--设置页面欢迎页-->
+    <!--<welcome-file-list>
+        <welcome-file>welcome.html</welcome-file>
+    </welcome-file-list>-->
+
+    <welcome-file-list>
+        <welcome-file>welcome</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>welcomeServlet</servlet-name>
+        <servlet-class>com.bjpowernode.javaweb.servlet.WelcomeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>welcomeServlet</servlet-name>
+        <url-pattern>/welcome</url-pattern>
+    </servlet-mapping>
+</web-app>

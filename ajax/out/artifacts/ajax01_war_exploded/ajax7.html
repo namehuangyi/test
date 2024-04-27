@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试我们自己手动开发的jQuery库</title>
+</head>
+<body>
+
+<script type="text/javascript" src="js/jQuery-js.js"></script>
+
+<script type="text/javascript">
+/*$(function (){
+  $("#btn").click(function (){
+    $.ajax({
+      type : "GET",
+      url : "/ajax/ajaxrequest7",
+      async : true,
+      data : "username=" + $("#username").val(),
+      success : function (json){
+        $("#mydiv").html(json.uname)
+      }
+    })
+  })
+})*/
+
+$(function (){
+  $("#btn").click(function (){
+    $.ajax({
+      type : "POST",
+      url : "/ajax/ajaxrequest7",
+      async : true,
+      data : "username=" + $("#username").val(),
+      success : function (json){
+        $("#mydiv").html(json.uname)
+      }
+    })
+  })
+})
+</script>
+
+<button id="btn">发送AJAX请求</button><br>
+用户名：<input type="text" id="username"><br>
+<div id="mydiv"></div>
+</body>
+</html>
